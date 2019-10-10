@@ -1,1 +1,30 @@
-<p>peliculas-listado works!</p>
+<div *ngIf="peliculaSeleccionada">
+    <app-pelicula-detalle [pelicula]="peliculaSeleccionada"></app-pelicula-detalle>
+ </div>
+ <div fxLayout="row wrap" fxLayout.xs="column" class="container" fxLayoutGap="5px">
+    <mat-card *ngFor="let pelicula of peliculas" fxFlex="1 1 calc(33.3% - 5px)" fxFlex.lt-lg="1 1 calc(50% - 5px)">
+        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{pelicula.poster_path}}">
+        <circle-progress
+        [percent]="pelicula.vote_average*10"
+        [radius]="15"
+        [titleFontSize]="15"
+        [outerStrokeWidth]="5"
+        [innerStrokeWidth]="10"
+        [outerStrokeColor]="'#78C000'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="300"
+        [showSubtitle]="false"
+      ></circle-progress>
+        <mat-card-header>
+            <mat-card-title>{{ pelicula.title }}</mat-card-title>
+            <mat-card-subtitle>{{ pelicula.release_date }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ pelicula.overview }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="peliculaSeleccionada(pelicula)">Ver detalles</button>
+        </mat-card-actions>
+    </mat-card>
+    </div>

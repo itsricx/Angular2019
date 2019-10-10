@@ -1,0 +1,13 @@
+.container {
+    padding: 10px
+}
+
+.imagen-pelicula {
+    object-fit: cover;
+    height: 200px;
+    padding-top: 10px;
+}
+
+mat-card {
+    margin-bottom: 20px;
+}

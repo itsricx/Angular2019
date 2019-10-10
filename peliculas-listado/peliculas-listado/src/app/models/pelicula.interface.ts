@@ -1,6 +1,4 @@
-declare module namespace {
-
-    export interface Result {
+  export interface Pelicula {
         popularity: number;
         vote_count: number;
         video: boolean;
@@ -18,7 +16,6 @@ declare module namespace {
     }
 
     export interface RootObject {
-        results: Result[];
+        results: Pelicula[];
     }
 
-}
