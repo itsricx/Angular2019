@@ -17,15 +17,7 @@ export class PeliculaswarListadoComponent implements OnInit {
   'opening_crawl',
   'director',
   'producer',
-  'release_date',
-  'characters',
-  'planets',
-  'starships',
-  'vehicles',
-  'species',
-  'created',
-  'edited',
-  'url'];
+  'release_date'];
   
   constructor(private starwarsService: StarwarsService) { }
 
