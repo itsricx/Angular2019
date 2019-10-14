@@ -3,7 +3,11 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PeliculasResponse } from '../models/pelicula-response';
 
-const authURL = 'https://swapi.co/api/films?api_key = ' + apiKey;
+const apiKey = '?api_key=d684b65ec3d30071ad75e327100054ab';
+const popular = 'https://api.themoviedb.org/3/movie/popular'+ [{apiKey}];
+const topRated = 'https://api.themoviedb.org/3/movie/top_rated' + [{apiKey}];
+const latest = 'https://api.themoviedb.org/3/movie/latest' + [{apiKey}];
+
 const requestOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
@@ -19,12 +23,36 @@ export class peliculasservicio {
 
   }
 
-  getPeliculas(): Observable<PeliculasResponse>{
+  getLatest(): Observable<PeliculasResponse>{
     return this.http.get<PeliculasResponse>(
 
-        authURL,
+        latest,
         requestOptions
     );
-
-  }  
+     
 }
+
+getPopulares(): Observable<PeliculasResponse>{
+  return this.http.get<PeliculasResponse>(
+
+      popular,
+      requestOptions
+  );  
+
+
+  }
+
+  getTopRanked(): Observable<PeliculasResponse>{
+    return this.http.get<PeliculasResponse>(
+  
+        topRated,
+        requestOptions
+    );  
+  
+  
+    }
+
+
+
+
+} 

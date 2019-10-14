@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListadoPeliculasComponent } from './listado-peliculas/listado-peliculas.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -12,16 +11,18 @@ import {MatTableModule} from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
 import { PaginaNoEncontradaComponent } from './pagina-no-encontrada/pagina-no-encontrada.component';
 import {peliculasservicio} from './services/peliculas-servicio';
+import { ListadoPopularesComponent } from './listado-populares/listado-populares.component';
+import { ListadoRankedComponent } from './listado-ranked/listado-ranked.component';
+import { ListadoRecientesComponent } from './listado-recientes/listado-recientes.component';
 const appRoutes: Routes = [
-  { path: 'crisis-center', component: CrisisListComponent },
-  { path: 'hero/:id',      component: HeroDetailComponent },
+  { path: 'recientes', component: ListadoRecientesComponent },
+  { path: 'popular',      component: ListadoPopularesComponent },
   {
-    path: 'heroes',
-    component: HeroListComponent,
-    data: { title: 'Heroes List' }
+    path: 'top_ranked',
+    component: ListadoRankedComponent
   },
   { path: '',
-    redirectTo: '/heroes',
+    redirectTo: 'popular',
     pathMatch: 'full'
   },
   { path: '**', component: PaginaNoEncontradaComponent }
@@ -31,8 +32,10 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PaginaNoEncontradaComponent,
-    ListadoPeliculasComponent,
-    PaginaNoEncontradaComponent
+    PaginaNoEncontradaComponent,
+    ListadoPopularesComponent,
+    ListadoRankedComponent,
+    ListadoRecientesComponent
   ],
   imports: [
     BrowserModule,

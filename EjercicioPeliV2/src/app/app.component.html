@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+    <span>Listado Peliculas</span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">language</mat-icon>
+    <a [routerLink]="[ '/recientes' ]">Ultimas peliculas</a>&nbsp;
+    <a [routerLink]="[ '/top_ranked' ]">Mas valoradas</a>&nbsp;
+    <a [routerLink]="[ '/popular' ]">Populares</a>&nbsp;
+  </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <router-outlet></router-outlet>
