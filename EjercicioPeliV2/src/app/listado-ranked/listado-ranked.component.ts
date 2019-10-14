@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pelicula } from '../models/pelicula-interface';
+import { peliculasservicio } from '../services/peliculas-servicio';
 
 @Component({
   selector: 'app-listado-ranked',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoRankedComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  peliculasservicio: peliculasservicio;
+  listadoRanked: Pelicula[];
+  columnsToDisplay = ['id','overview','original_title','original_language','title','popularity','vote_average'];
+  constructor() { 
   }
 
+  ngOnInit() {
+    this,this.cargarRanked;
+    }
+  
+  
+    cargarRanked() {
+      this.peliculasservicio.getTopRanked().subscribe(resp =>{
+  
+        this.listadoRanked = resp.results;
+      });
+
+}
+    
 }

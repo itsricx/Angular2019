@@ -32,7 +32,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PaginaNoEncontradaComponent,
-    PaginaNoEncontradaComponent,
     ListadoPopularesComponent,
     ListadoRankedComponent,
     ListadoRecientesComponent
@@ -45,7 +44,6 @@ const appRoutes: Routes = [
     MatToolbarModule,
     HttpClientModule,
     FlexLayoutModule,
-    PaginaNoEncontradaComponent,
     RouterModule.forRoot(
       appRoutes
     )

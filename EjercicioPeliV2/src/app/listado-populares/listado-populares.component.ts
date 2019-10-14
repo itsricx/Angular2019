@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { peliculasservicio } from '../services/peliculas-servicio';
+import { Pelicula } from '../models/pelicula-interface';
 
 @Component({
   selector: 'app-listado-populares',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoPopularesComponent implements OnInit {
 
-  constructor() { }
+  peliculasservicio: peliculasservicio;
+  listadoPopulares: Pelicula[];
+  columnsToDisplay = ['id','overview','original_title','original_language','title','popularity','vote_average'];
+  constructor() { 
+  }
 
   ngOnInit() {
-  }
+    this,this.cargarPopulares;
+    }
+  
+  
+    cargarPopulares() {
+      this.peliculasservicio.getPopulares().subscribe(resp =>{
+  
+        this.listadoPopulares = resp.results;
+      });
+
+}
 
 }
