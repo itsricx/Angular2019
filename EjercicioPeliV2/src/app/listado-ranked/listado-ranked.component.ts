@@ -9,14 +9,14 @@ import { peliculasservicio } from '../services/peliculas-servicio';
 })
 export class ListadoRankedComponent implements OnInit {
 
-  peliculasservicio: peliculasservicio;
+  
   listadoRanked: Pelicula[];
   columnsToDisplay = ['id','overview','original_title','original_language','title','popularity','vote_average'];
-  constructor() { 
+  constructor(private peliculasservicio: peliculasservicio) { 
   }
 
   ngOnInit() {
-    this,this.cargarRanked;
+    this.cargarRanked;
     }
   
   

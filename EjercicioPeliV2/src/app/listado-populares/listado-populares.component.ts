@@ -9,14 +9,14 @@ import { Pelicula } from '../models/pelicula-interface';
 })
 export class ListadoPopularesComponent implements OnInit {
 
-  peliculasservicio: peliculasservicio;
+  
   listadoPopulares: Pelicula[];
   columnsToDisplay = ['id','overview','original_title','original_language','title','popularity','vote_average'];
-  constructor() { 
+  constructor(private peliculasservicio: peliculasservicio) { 
   }
 
   ngOnInit() {
-    this,this.cargarPopulares;
+    this.cargarPopulares;
     }
   
   

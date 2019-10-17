@@ -7,14 +7,14 @@ import { peliculasservicio } from '../services/peliculas-servicio';
   styleUrls: ['./listado-recientes.component.css']
 })
 export class ListadoRecientesComponent implements OnInit {
-  peliculasservicio: peliculasservicio;
+  
   listadoRecientes: Pelicula[];
   columnsToDisplay = ['id','overview','original_title','original_language','title','popularity','vote_average'];
-  constructor() { 
+  constructor(private peliculasservicio: peliculasservicio) { 
   }
 
   ngOnInit() {
-  this,this.cargarRecientes;
+  this.cargarRecientes;
   }
 
 

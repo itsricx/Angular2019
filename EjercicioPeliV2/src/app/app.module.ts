@@ -14,6 +14,7 @@ import {peliculasservicio} from './services/peliculas-servicio';
 import { ListadoPopularesComponent } from './listado-populares/listado-populares.component';
 import { ListadoRankedComponent } from './listado-ranked/listado-ranked.component';
 import { ListadoRecientesComponent } from './listado-recientes/listado-recientes.component';
+import { PeliculaDetalleComponent } from './pelicula-detalle/pelicula-detalle.component';
 const appRoutes: Routes = [
   { path: 'recientes', component: ListadoRecientesComponent },
   { path: 'popular',      component: ListadoPopularesComponent },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     PaginaNoEncontradaComponent,
     ListadoPopularesComponent,
     ListadoRankedComponent,
-    ListadoRecientesComponent
+    ListadoRecientesComponent,
+    PeliculaDetalleComponent
   ],
   imports: [
     BrowserModule,
